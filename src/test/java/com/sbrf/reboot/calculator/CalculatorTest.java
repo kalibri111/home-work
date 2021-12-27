@@ -30,4 +30,19 @@ class CalculatorTest {
     void classHasSevenMethods() {
         assertEquals(7, Calculator.class.getMethods().length - Object.class.getMethods().length);
     }
+
+    @Test
+    void cosTest() {
+        assertEquals(1., new Calculator().getCos(0.));
+    }
+
+    @Test
+    void sinTest() {
+        assertEquals(0., new Calculator().getSin(0.));
+    }
+
+    @Test
+    void tanTest() {
+        assertEquals(0., new Calculator().getTan(0.));
+    }
 }

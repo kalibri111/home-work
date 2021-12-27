@@ -21,15 +21,15 @@ public class Calculator {
         return first / second;
     }
 
-    public double sin(double angle) {
+    public double getSin(double angle) {
         return Math.sin(angle);
     }
 
-    public double cos(double angle) {
+    public double getCos(double angle) {
         return Math.cos(angle);
     }
 
-    public double tan(double angle) {
+    public double getTan(double angle) {
         return Math.tan(angle);
     }
 }
