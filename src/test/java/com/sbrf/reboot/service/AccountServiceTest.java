@@ -1,5 +1,6 @@
 package com.sbrf.reboot.service;
 
+import com.sbrf.reboot.AccountService;
 import com.sbrf.reboot.repository.AccountRepository;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
@@ -54,6 +55,23 @@ class AccountServiceTest {
         when(accountRepository.getAllAccountsByClientId(clientId)).thenReturn(accounts);
 
         assertFalse(accountService.isClientHasContract(clientId, contractNumber));
+    }
+
+    @SneakyThrows
+    @Test
+    void AccountExist() {
+        long accId = 1L;
+        when(accountRepository.isAccountActiveByAccountId(1L)).thenReturn(true);
+        assertTrue(accountService.isAccountAllowed(accId));
+    }
+
+    @SneakyThrows
+    @Test
+    void AccountNotExist() {
+        long accId = 1L;
+        long badAccId = 0L;
+        when(accountRepository.isAccountActiveByAccountId(1L)).thenReturn(true);
+        assertFalse(accountService.isAccountAllowed(badAccId));
     }
 
     @Test
