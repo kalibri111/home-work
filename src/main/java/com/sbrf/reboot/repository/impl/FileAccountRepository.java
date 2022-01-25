@@ -7,19 +7,19 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FileAccountRepository implements AccountRepository {
-    private String _filePath;
+    private String filePath;
     private final String CLIENT_ID_STRING = new String("clientId");
 
     public FileAccountRepository(String filePath) {
-        _filePath = filePath;
+        this.filePath = filePath;
     }
 
     @Override
     public Set<Long> getAllAccountsByClientId(long clientId) throws FileNotFoundException {
 
-        File file = new File(_filePath);
+        File file = new File(filePath);
         if (! file.exists()) {
-            throw new FileNotFoundException(String.format("File: %s does not exists", _filePath));
+            throw new FileNotFoundException(String.format("File: %s does not exists", filePath));
         }
 
         InputStream inputStream = new FileInputStream(file);
