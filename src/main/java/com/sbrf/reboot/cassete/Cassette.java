@@ -1,10 +1,12 @@
 package com.sbrf.reboot.cassete;
 
+import com.sbrf.reboot.banknote.Banknote;
+
 import java.util.ArrayList;
 
-public class Cassette <Nominal>{
-    private ArrayList<Nominal> banknotesBuffer;
-    public Cassette(ArrayList<Nominal> banknotes) {
+public class Cassette <T extends Banknote>{
+    private ArrayList<T> banknotesBuffer;
+    public Cassette(ArrayList<T> banknotes) {
         banknotesBuffer = banknotes;
     }
 
