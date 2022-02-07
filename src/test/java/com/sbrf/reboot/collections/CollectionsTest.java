@@ -31,12 +31,13 @@ public class CollectionsTest {
 
         List<String> students = new LinkedList<>(
                 Arrays.asList(
-                        "Козлов",
                         "Иванов",
                         "Петров",
                         "Сидоров"
                 )
         );
+
+        students.add(0, "Козлов");
 
         assertEquals(4, students.size());
     }
