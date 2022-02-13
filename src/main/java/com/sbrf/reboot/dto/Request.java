@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Request implements Dto{
+public class Request {
     public String atmNumber;
 
     public String getAtmNumber() {
